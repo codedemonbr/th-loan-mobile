@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { LoadingProvider } from "./src/hooks/useLoading";
+import { LoansProvider } from "./src/hooks/useLoans";
+import { ModalProvider } from "./src/hooks/useModal";
+import { Dashboard } from "./src/screens/Dashboard";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <LoadingProvider>
+            <LoansProvider>
+                <ModalProvider>
+                    <Dashboard />
+                    {/* <AppRoutes /> */}
+                    <StatusBar style="light" />
+                </ModalProvider>
+            </LoansProvider>
+        </LoadingProvider>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
