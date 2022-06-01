@@ -1,11 +1,9 @@
-import { formatCurrency } from "./formatCurrency";
-
 /**
  *
  * @param text receive a string with the value that will be translated
  * @returns value as a currency
  */
-const maskMonetary = (text: string): string => {
+const monetaryToNumber = (text: string): number => {
     /**
      * This regex replace everything that is not a number.
      * Like '.' ' ' ',' 'R$' '+' and another chars
@@ -13,9 +11,9 @@ const maskMonetary = (text: string): string => {
      * decimal means the cents
      */
     const textNum = +text.replace(/[^0-9]/g, "");
-   
+  
 
-    return formatCurrency(textNum / 100);
+    return +(textNum / 100);
 };
 
-export default maskMonetary;
+export default monetaryToNumber;

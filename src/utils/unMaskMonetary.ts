@@ -5,7 +5,7 @@ const unMaskMonetary = (text: string): number => {
      * principal is the part at the left side of comma
      * decimal means the cents
      */
-    const textNum = text.replace(/[^0-9]/g, "");
+    const textNum = !!text ? text.replace(/[^0-9]/g, "") : "0000";
     let principal = "0";
     let decimal = "00";
 

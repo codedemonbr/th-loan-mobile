@@ -17,7 +17,7 @@ export const Container = styled.View<ModalProps>`
     right: 0;
     bottom: 0;
 
-    z-index: 10;
+    z-index: 2;
 
     height: ${Dimensions.get("window").height}px;
     width: ${Dimensions.get("window").width}px;

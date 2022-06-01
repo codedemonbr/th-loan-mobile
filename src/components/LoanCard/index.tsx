@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { formatCurrency } from "../../utils/formatCurrency";
 import {
@@ -19,10 +20,15 @@ interface LoanCardProps {
 }
 
 const LoanCard: React.FC<LoanCardProps> = ({ loan }) => {
+    const { navigate } = useNavigation();
+    const { id } = loan;
     return (
         <Container
             key={loan.id}
-            onPress={() => console.log("you touched >>>", loan.id)}
+            onPress={() => {
+                //@ts-ignore
+                navigate("Loans", { id });
+            }}
         >
             <Content>
                 <Title>Empréstimo</Title>

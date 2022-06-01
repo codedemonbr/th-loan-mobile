@@ -1,4 +1,4 @@
-import {
+import React, {
     createContext,
     Dispatch,
     ReactNode,
@@ -35,6 +35,7 @@ interface LoansContextData {
     setLimits: Dispatch<SetStateAction<ILimitDTO>>;
     createLoan: (loan: LoanInput) => Promise<void>;
     isLoading: boolean;
+    setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 const LoansContext = createContext<LoansContextData>({} as LoansContextData);
@@ -88,9 +89,18 @@ export function LoansProvider({ children }: LoansProviderProps) {
         setLoans([...data]);
     };
 
+    
+
     return (
         <LoansContext.Provider
-            value={{ loans, limits, setLimits, createLoan, isLoading }}
+            value={{
+                loans,
+                limits,
+                setLimits,
+                createLoan,
+                isLoading,
+                setIsLoading,
+            }}
         >
             {children}
         </LoansContext.Provider>
