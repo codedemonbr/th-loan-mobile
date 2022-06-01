@@ -91,6 +91,8 @@ npm install && npm start
 
 
 ```
+Preview:
+
 
 <p align="center">
   <img alt="Result" src="https://res.cloudinary.com/codedemonbr/image/upload/v1654112679/TH-Loan/appUsoGeral_crpzdi.gif">
